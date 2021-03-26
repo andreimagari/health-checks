@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import shutil
 import os
 import sys
 
 def check_reboot():
     """Returns True if the computer has a pending reboot."""
-    return os.path.exist("/run/reboot-required")
+    return os.path.exists("/run/reboot-required")
 
 def check_disk_full(disk, min_gb, min_percent):
     """Returns True if there isn't enough disk space, False Otherwise."""
